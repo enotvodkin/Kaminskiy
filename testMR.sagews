@@ -6,7 +6,7 @@ def Test_Miller_Rabin(n, k):
         a = ZZ.random_element(2, n - 1)
         x = pow(a, m, n)
         if x == 1 or x == n - 1: return true, a
-        for i in range(1, k):
+        for i in range(1, s):
             x = pow(x, 2, n)
             if x == 1: return false
             elif x == n - 1: return true, a
