@@ -1,6 +1,8 @@
 def Test_Miller_Rabin(n, k):
-    s = [e for p, e in factor(n - 1)][0] if n % 2 != 0 else 0
-    m, f = (n - 1) / pow(2, s), 1
+    m, s = n - 1, 0
+    while m % 2 == 0:
+      s += 1
+      m /= 2
 
     for j in range(0, k):
         a = ZZ.random_element(2, n - 1)
